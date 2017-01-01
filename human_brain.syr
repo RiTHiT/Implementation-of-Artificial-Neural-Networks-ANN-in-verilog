@@ -1,0 +1,530 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Reading design: human_brain.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "human_brain.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "human_brain"
+Output Format                      : NGC
+Target Device                      : xc3s100e-5-cp132
+
+---- Source Options
+Top Module Name                    : human_brain
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "counter_4.v" in library work
+Compiling verilog file "compare.v" in library work
+Module <counter_4> compiled
+Compiling verilog file "summer.v" in library work
+Module <compare> compiled
+Compiling verilog file "D_latch.v" in library work
+Module <summer> compiled
+Compiling verilog file "Counter.v" in library work
+Module <D_latch> compiled
+Compiling verilog file "comparator.v" in library work
+Module <counter> compiled
+Compiling verilog file "neuron_1.v" in library work
+Module <comparator> compiled
+Compiling verilog file "middle_neuron.v" in library work
+Module <input_neuron> compiled
+Compiling verilog file "human_brain.v" in library work
+Module <middle_neuron> compiled
+Module <human_brain> compiled
+No errors in compilation
+Analysis of file <"human_brain.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <human_brain> in library <work>.
+
+Analyzing hierarchy for module <input_neuron> in library <work>.
+
+Analyzing hierarchy for module <middle_neuron> in library <work>.
+
+Analyzing hierarchy for module <counter> in library <work>.
+
+Analyzing hierarchy for module <D_latch> in library <work>.
+
+Analyzing hierarchy for module <summer> in library <work>.
+
+Analyzing hierarchy for module <comparator> in library <work>.
+
+Analyzing hierarchy for module <counter_4> in library <work>.
+
+Analyzing hierarchy for module <compare> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <human_brain>.
+Module <human_brain> is correct for synthesis.
+ 
+Analyzing module <input_neuron> in library <work>.
+Module <input_neuron> is correct for synthesis.
+ 
+Analyzing module <counter> in library <work>.
+Module <counter> is correct for synthesis.
+ 
+Analyzing module <counter_4> in library <work>.
+Module <counter_4> is correct for synthesis.
+ 
+Analyzing module <compare> in library <work>.
+WARNING:Xst:905 - "compare.v" line 27: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <inp>
+Module <compare> is correct for synthesis.
+ 
+Analyzing module <D_latch> in library <work>.
+Module <D_latch> is correct for synthesis.
+ 
+Analyzing module <summer> in library <work>.
+Module <summer> is correct for synthesis.
+ 
+Analyzing module <comparator> in library <work>.
+Module <comparator> is correct for synthesis.
+ 
+Analyzing module <middle_neuron> in library <work>.
+Module <middle_neuron> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <D_latch>.
+    Related source file is "D_latch.v".
+    Found 4-bit register for signal <outp>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <D_latch> synthesized.
+
+
+Synthesizing Unit <summer>.
+    Related source file is "summer.v".
+    Found 4-bit adder for signal <o>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <summer> synthesized.
+
+
+Synthesizing Unit <comparator>.
+    Related source file is "comparator.v".
+    Found 4-bit comparator greater for signal <o$cmp_gt0000> created at line 28.
+    Summary:
+	inferred   1 Comparator(s).
+Unit <comparator> synthesized.
+
+
+Synthesizing Unit <counter_4>.
+    Related source file is "counter_4.v".
+    Found 4-bit up counter for signal <c_out>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <counter_4> synthesized.
+
+
+Synthesizing Unit <compare>.
+    Related source file is "compare.v".
+    Found 4-bit comparator lessequal for signal <outp$cmp_le0000> created at line 29.
+    Summary:
+	inferred   1 Comparator(s).
+Unit <compare> synthesized.
+
+
+Synthesizing Unit <middle_neuron>.
+    Related source file is "middle_neuron.v".
+Unit <middle_neuron> synthesized.
+
+
+Synthesizing Unit <counter>.
+    Related source file is "Counter.v".
+Unit <counter> synthesized.
+
+
+Synthesizing Unit <input_neuron>.
+    Related source file is "neuron_1.v".
+Unit <input_neuron> synthesized.
+
+
+Synthesizing Unit <human_brain>.
+    Related source file is "human_brain.v".
+Unit <human_brain> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 2
+# Counters                                             : 2
+ 4-bit up counter                                      : 2
+# Registers                                            : 2
+ 4-bit register                                        : 2
+# Comparators                                          : 4
+ 4-bit comparator greater                              : 2
+ 4-bit comparator lessequal                            : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 2
+# Counters                                             : 2
+ 4-bit up counter                                      : 2
+# Registers                                            : 8
+ Flip-Flops                                            : 8
+# Comparators                                          : 4
+ 4-bit comparator greater                              : 2
+ 4-bit comparator lessequal                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2146 - In block <input_neuron>, Counter <c1/count1/c_out> <c2/count1/c_out> are equivalent, XST will keep only <c1/count1/c_out>.
+
+Optimizing unit <human_brain> ...
+
+Optimizing unit <middle_neuron> ...
+
+Optimizing unit <input_neuron> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block human_brain, actual ratio is 3.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 12
+ Flip-Flops                                            : 12
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : human_brain.ngr
+Top Level Output File Name         : human_brain
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 26
+
+Cell Usage :
+# BELS                             : 57
+#      INV                         : 1
+#      LUT2                        : 4
+#      LUT2_L                      : 2
+#      LUT3                        : 8
+#      LUT4                        : 37
+#      LUT4_D                      : 1
+#      MUXF5                       : 4
+# FlipFlops/Latches                : 12
+#      FDC                         : 12
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 25
+#      IBUF                        : 21
+#      OBUF                        : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-5 
+
+ Number of Slices:                       29  out of    960     3%  
+ Number of Slice Flip Flops:             12  out of   1920     0%  
+ Number of 4 input LUTs:                 53  out of   1920     2%  
+ Number of IOs:                          26
+ Number of bonded IOBs:                  26  out of     83    31%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 12    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+res                                | IBUF                   | 12    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 4.129ns (Maximum Frequency: 242.204MHz)
+   Minimum input arrival time before clock: 4.583ns
+   Maximum output required time after clock: 16.452ns
+   Maximum combinational path delay: 17.238ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.129ns (frequency: 242.204MHz)
+  Total number of paths / destination ports: 58 / 12
+-------------------------------------------------------------------------
+Delay:               4.129ns (Levels of Logic = 3)
+  Source:            inps/c1/count1/c_out_0 (FF)
+  Destination:       inps/d1/outp_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: inps/c1/count1/c_out_0 to inps/d1/outp_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              8   0.514   0.646  inps/c1/count1/c_out_0 (inps/c1/count1/c_out_0)
+     LUT4:I3->O            3   0.612   0.481  inps/c1/com1/outp_cmp_le0000133 (inps/c1/com1/outp_cmp_le0000133)
+     LUT4:I2->O            2   0.612   0.383  inps/c1/com1/outp_cmp_le0000161 (inps/c1/com1/outp_cmp_le0000161)
+     LUT4:I3->O            1   0.612   0.000  inps/c1/com1/outp<1>1 (inps/a1<1>)
+     FDC:D                     0.268          inps/d1/outp_1
+    ----------------------------------------
+    Total                      4.129ns (2.618ns logic, 1.511ns route)
+                                       (63.4% logic, 36.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 42 / 8
+-------------------------------------------------------------------------
+Offset:              4.583ns (Levels of Logic = 4)
+  Source:            in1<0> (PAD)
+  Destination:       inps/d1/outp_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: in1<0> to inps/d1/outp_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.509  in1_0_IBUF (in1_0_IBUF)
+     LUT4:I0->O            3   0.612   0.481  inps/c1/com1/outp_cmp_le0000133 (inps/c1/com1/outp_cmp_le0000133)
+     LUT4:I2->O            2   0.612   0.383  inps/c1/com1/outp_cmp_le0000161 (inps/c1/com1/outp_cmp_le0000161)
+     LUT4:I3->O            1   0.612   0.000  inps/c1/com1/outp<1>1 (inps/a1<1>)
+     FDC:D                     0.268          inps/d1/outp_1
+    ----------------------------------------
+    Total                      4.583ns (3.210ns logic, 1.373ns route)
+                                       (70.0% logic, 30.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1315 / 4
+-------------------------------------------------------------------------
+Offset:              16.452ns (Levels of Logic = 12)
+  Source:            inps/d2/outp_1 (FF)
+  Destination:       out<2> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: inps/d2/outp_1 to out<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.514   0.410  inps/d2/outp_1 (inps/d2/outp_1)
+     LUT4:I2->O            2   0.612   0.380  inps/su1/Madd_o_lut<1>1 (inps/su1/Madd_o_lut<1>)
+     MUXF5:S->O            3   0.641   0.520  inps/su1/Madd_o_cy<1>1_f5 (inps/su1/Madd_o_cy<1>)
+     LUT4:I1->O            3   0.612   0.520  inps/su1/Madd_o_cy<2>11 (inps/su1/Madd_o_cy<2>)
+     LUT2:I1->O            3   0.612   0.603  inps/su1/Madd_o_xor<3>11 (inps/sum<3>)
+     LUT4:I0->O            2   0.612   0.532  inps/outf<1>1 (rout<1>)
+     LUT3:I0->O            1   0.612   0.509  mids/su2/Madd_o_lut<1>1 (mids/su2/Madd_o_lut<1>)
+     LUT4:I0->O            2   0.612   0.532  mids/su2/Madd_o_xor<1>11 (mids/c<1>)
+     LUT4:I0->O            1   0.612   0.509  mids/d<0>2 (mids/d<0>1)
+     LUT4:I0->O            2   0.612   0.532  mids/d<0>1_SW0 (N8)
+     LUT4:I0->O            3   0.612   0.603  mids/d<0>1 (mids/d<0>)
+     LUT2:I0->O            1   0.612   0.357  mids/out<1>1 (out_1_OBUF)
+     OBUF:I->O                 3.169          out_1_OBUF (out<1>)
+    ----------------------------------------
+    Total                     16.452ns (10.444ns logic, 6.008ns route)
+                                       (63.5% logic, 36.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1607 / 4
+-------------------------------------------------------------------------
+Delay:               17.238ns (Levels of Logic = 13)
+  Source:            w1<1> (PAD)
+  Destination:       out<2> (PAD)
+
+  Data Path: w1<1> to out<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.106   0.603  w1_1_IBUF (w1_1_IBUF)
+     LUT4:I0->O            2   0.612   0.380  inps/su1/Madd_o_lut<1>1 (inps/su1/Madd_o_lut<1>)
+     MUXF5:S->O            3   0.641   0.520  inps/su1/Madd_o_cy<1>1_f5 (inps/su1/Madd_o_cy<1>)
+     LUT4:I1->O            3   0.612   0.520  inps/su1/Madd_o_cy<2>11 (inps/su1/Madd_o_cy<2>)
+     LUT2:I1->O            3   0.612   0.603  inps/su1/Madd_o_xor<3>11 (inps/sum<3>)
+     LUT4:I0->O            2   0.612   0.532  inps/outf<1>1 (rout<1>)
+     LUT3:I0->O            1   0.612   0.509  mids/su2/Madd_o_lut<1>1 (mids/su2/Madd_o_lut<1>)
+     LUT4:I0->O            2   0.612   0.532  mids/su2/Madd_o_xor<1>11 (mids/c<1>)
+     LUT4:I0->O            1   0.612   0.509  mids/d<0>2 (mids/d<0>1)
+     LUT4:I0->O            2   0.612   0.532  mids/d<0>1_SW0 (N8)
+     LUT4:I0->O            3   0.612   0.603  mids/d<0>1 (mids/d<0>)
+     LUT2:I0->O            1   0.612   0.357  mids/out<1>1 (out_1_OBUF)
+     OBUF:I->O                 3.169          out_1_OBUF (out<1>)
+    ----------------------------------------
+    Total                     17.238ns (11.036ns logic, 6.202ns route)
+                                       (64.0% logic, 36.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.54 secs
+ 
+--> 
+
+Total memory usage is 189696 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

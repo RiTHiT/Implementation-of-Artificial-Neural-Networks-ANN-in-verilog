@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "F:/VLSI PROJECTS/Human_Brain/Brain_test_isim_beh.exe" -prj "F:/VLSI PROJECTS/Human_Brain/Brain_test_beh.prj" "work.Brain_test" "work.glbl" 

@@ -1,0 +1,5 @@
+set -tmpdir "F:/VLSI PROJECTS/Human_Brain/xst/projnav.tmp"
+set -xsthdpdir "F:/VLSI PROJECTS/Human_Brain/xst"
+elaborate
+-ifn neuro1_test.prj
+-ifmt mixed

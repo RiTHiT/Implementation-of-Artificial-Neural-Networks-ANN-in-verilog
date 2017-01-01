@@ -1,0 +1,7 @@
+verilog work "counter_4.v"
+verilog work "compare.v"
+verilog work "summer.v"
+verilog work "D_latch.v"
+verilog work "Counter.v"
+verilog work "comparator.v"
+verilog work "neuron_1.v"

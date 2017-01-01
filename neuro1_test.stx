@@ -1,0 +1,47 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to F:/VLSI PROJECTS/Human_Brain/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Parameter xsthdpdir set to F:/VLSI PROJECTS/Human_Brain/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "summer.v" in library work
+Compiling verilog file "D_latch.v" in library work
+Module <summer> compiled
+Compiling verilog file "Counter.v" in library work
+Module <D_latch> compiled
+Compiling verilog file "comparator.v" in library work
+Module <counter> compiled
+Compiling verilog file "neuron_1.v" in library work
+Module <comparator> compiled
+Compiling verilog file "neuro1_test.v" in library work
+Module <neuron_1> compiled
+Module <neuro1_test> compiled
+No errors in compilation
+Analysis of file <"neuro1_test.prj"> succeeded.
+ 
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.27 secs
+ 
+--> 
+
+Total memory usage is 202936 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

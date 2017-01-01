@@ -1,0 +1,37 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o F:/VLSI PROJECTS/Human_Brain/Brain_test_isim_beh.exe -prj F:/VLSI PROJECTS/Human_Brain/Brain_test_beh.prj work.Brain_test work.glbl 
+ISim P.20131013 (signature 0x8ef4fb42)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "F:/VLSI PROJECTS/Human_Brain/counter_4.v" into library work
+Analyzing Verilog file "F:/VLSI PROJECTS/Human_Brain/compare.v" into library work
+Analyzing Verilog file "F:/VLSI PROJECTS/Human_Brain/summer.v" into library work
+Analyzing Verilog file "F:/VLSI PROJECTS/Human_Brain/D_latch.v" into library work
+Analyzing Verilog file "F:/VLSI PROJECTS/Human_Brain/Counter.v" into library work
+Analyzing Verilog file "F:/VLSI PROJECTS/Human_Brain/comparator.v" into library work
+Analyzing Verilog file "F:/VLSI PROJECTS/Human_Brain/neuron_1.v" into library work
+Analyzing Verilog file "F:/VLSI PROJECTS/Human_Brain/middle_neuron.v" into library work
+Analyzing Verilog file "F:/VLSI PROJECTS/Human_Brain/human_brain.v" into library work
+Analyzing Verilog file "F:/VLSI PROJECTS/Human_Brain/Brain_test.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 94228 KB
+Fuse CPU Usage: 249 ms
+Compiling module counter_4
+Compiling module compare
+Compiling module counter
+Compiling module D_latch
+Compiling module summer
+Compiling module comparator
+Compiling module input_neuron
+Compiling module middle_neuron
+Compiling module human_brain
+Compiling module Brain_test
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 11 Verilog Units
+Built simulation executable F:/VLSI PROJECTS/Human_Brain/Brain_test_isim_beh.exe
+Fuse Memory Usage: 99700 KB
+Fuse CPU Usage: 327 ms
